@@ -1,5 +1,6 @@
 import sys
- 
+from flask import Flask
+from flask import request
  
 def main():
      
@@ -29,8 +30,10 @@ def main():
     #print(big_string)
     return big_string 
  
- 
- 
+app = Flask(__name__)
+
+
+@app.route('/')
 def computepi(N):
     q, r, t, k, m, x = 1, 0, 1, 1, 3, 3
     counter = 0
@@ -49,6 +52,6 @@ def computepi(N):
 
 
 if __name__ == "__main__":
-   main()
+    app.run(host='0.0.0.0', threaded=True)
 
 
