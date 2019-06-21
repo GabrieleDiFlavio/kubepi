@@ -5,7 +5,7 @@ from flask import request
 def main():
      
     #url = req.params.get('URL')
-    Ns = str(sys.argv[1])
+    Ns = request.args.get('N',default = 10, type = int)
     #lenghts = req.params.get('lenghts')
  
     #if not url:
