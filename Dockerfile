@@ -6,8 +6,7 @@ RUN apt-get -y install python3 python3-dev python3-pip build-essential libgmp-de
 
 COPY ./  ./app
 
-# Exposing Ports
-# EXPOSE 5000
+
 
 WORKDIR ./app
 
