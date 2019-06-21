@@ -1,11 +1,12 @@
 import sys
+import urllib.request
 from flask import Flask
 from flask import request
  
 def main():
      
     #url = req.params.get('URL')
-    Ns = 100
+    Ns = request.args.get('N',default = 10, type = int)
     #lenghts = req.params.get('lenghts')
  
     #if not url:
