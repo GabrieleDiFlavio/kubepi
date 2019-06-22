@@ -3,6 +3,9 @@ import urllib.request
 from flask import Flask
 from flask import request
  
+ 
+N =request.args.get('N',default = 10, type = int)
+ 
 app = Flask(__name__)
 
 @app.route('/')
@@ -27,7 +30,6 @@ def main():
      
     #url = req.params.get('URL')
    
-    N =request.args.get('N',default = 10, type = int)
  
 
     #lenghts = req.params.get('lenghts')
