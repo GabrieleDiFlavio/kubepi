@@ -3,36 +3,7 @@ import urllib.request
 from flask import Flask
 from flask import request
  
-def main():
-     
-    #url = req.params.get('URL')
-    Ns = request.args.get('N',default = 10, type = int)
-    #lenghts = req.params.get('lenghts')
- 
-    #if not url:
-    #    url="localhost"
-    if not Ns:
-        Ns=10
-    #if not lenghts:
-    #    lenghts=1
- 
-    N = int(Ns)
-    #lenght = int(lenghts)
- 
-    # return(f"Hello {URL}!")
-    my_array=[]
-    for i in computepi(N):
-        my_array.append(str(i))
-    my_array = my_array[:1] + ['.'] + my_array[1:]
-    big_string = "".join(my_array)
-    # if lenght > 1:
-    #    s = url +"&Ns="+str(N)+"&lenghts="+str(lenght-1)+"&URL="+url
-    #    contents = urllib.request.urlopen(s).read()
-    #print(big_string)
-    return big_string 
- 
 app = Flask(__name__)
-
 
 @app.route('/')
 def computepi(N):
@@ -48,6 +19,39 @@ def computepi(N):
                 counter=counter+1
         else:
             q, r, t, k, m, x = q*k, (2*q+r)*x, t*x, k+1, (q*(7*k+2)+r*x)//(t*x), x+2
+     
+     return(f.getvalue())                       
+
+ 
+def main():
+     
+    #url = req.params.get('URL')
+   
+    N =request.args.get('N',default = 10, type = int)
+ 
+
+    #lenghts = req.params.get('lenghts')
+ 
+    #if not url:
+    #    url="localhost"
+  
+    #if not lenghts:
+    #    lenghts=1
+ 
+    #lenght = int(lenghts)
+ 
+    # return(f"Hello {URL}!")
+    my_array=[]
+    for i in computepi(N):
+        my_array.append(str(i))
+    my_array = my_array[:1] + ['.'] + my_array[1:]
+    big_string = "".join(my_array)
+    # if lenght > 1:
+    #    s = url +"&Ns="+str(N)+"&lenghts="+str(lenght-1)+"&URL="+url
+    #    contents = urllib.request.urlopen(s).read()
+    #print(big_string)
+    return big_string 
+ 
 
 
 
